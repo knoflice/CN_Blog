@@ -1,0 +1,7 @@
+my_form:
+ path: '/form'
+ defaults:
+    _form: 'Drupal\my_form\Form\FirstForm'
+    _title: 'My first form'
+ requirements:
+    _permission: 'acces content'

@@ -1,0 +1,7 @@
+name: My Form Module
+description: 'Creates a form with text field with validation only for numbers.'
+package: Custom
+type: module
+version: 1.0
+core: 8.x
+hidden: false
