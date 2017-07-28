@@ -10,11 +10,23 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Session\AccountInterface;
     
 class FirstController extends ControllerBase {
-	public function content() {
+
+  /**
+   * @return array
+   */
+  public function content() {
 		$name = \Drupal::currentUser()->getUsername();
-		return array(
-			'#type' => 'markup',
-			'#markup' => '<p>'.t('Hello '.$name).'</p>'
-		);
-	}
-}
+		if ($name != null) {
+      return array(
+        '#type' => 'markup',
+        '#markup' => '<p>' . t('Hello ' . $name) . '</p>'
+      );
+    }
+    else {
+        return array(
+          '#type' => 'markup',
+          '#markup' => '<p>'.t('Access denied.').'</p>'
+        );
+    }
+  }
+  }
