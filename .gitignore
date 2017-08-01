@@ -1,0 +1,21 @@
+# Ignore thumbnails created by windows
+Thumbs.db
+
+# Ignore sensitive information
+#/web/sites/*/settings.php
+/web/sites/*/settings.loc.php
+
+# Ignore PHPstorm
+/.idea
+.idea/*
+
+# Drupal8
+#sites/default/files
+#sites/default/services.yml
+#sites/default/settings.php
+#modules/_dev_loc
+#themes/_dev_loc
+#docroot/modules/_dev_loc
+#docroot/themes/_dev_loc
+#docroot/sites/*/modules/_dev_loc
+#docroot/sites/*/themes/_dev_loc

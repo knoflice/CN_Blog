@@ -734,9 +734,9 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * example.org, with all subdomains included.
  *
  */
- $settings['trusted_host_patterns'] = array(
-    '^localhost$',
- );
+ #$settings['trusted_host_patterns'] = array(
+ #   '^cnblog.local$',
+ #);
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
@@ -767,15 +767,15 @@ $settings['file_scan_ignore_directories'] = [
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
-$databases['default']['default'] = array (
-  'database' => 'cn_blog',
-  'username' => 'root',
-  'password' => '',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
+
+/*
+ * If there is a local settings file, then include it.
+ */
+$site="default";
+ $local_settings = DRUPAL_ROOT."/sites/$site/settings.loc.php";
+ if (file_exists($local_settings)){
+     include $local_settings;
+ }
+
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = 'sites/default/files/config_0dI-1mw_t_z2pbxzSMK5yTn3vz1bZU4MbXV_f9duNtXOA92K4XFjh-WoOcEhYymAY9kJRpuCZQ/sync';
